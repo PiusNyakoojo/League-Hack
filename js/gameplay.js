@@ -128,6 +128,10 @@ function getModel( id, hero ) {
 		material.side = THREE.DoubleSide;
 
 		model = new THREE.Mesh( geometry, material );
+
+		if ( hero == "nickCage" ) {
+			model.scale.x = model.scale.y = model.scale.z = 20;
+		}
 	}
 
 	var tempTeam;
