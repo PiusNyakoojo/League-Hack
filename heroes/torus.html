@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title>Template03 - Orbit Controls</title>
+	<script src="../js/lib/three.js"></script>
+	<script src="../js/lib/OrbitControls.js"></script>
+</head>
+<style>
+body
+{
+	margin: 0;
+	overflow: hidden;
+}
+</style>
+<body>
+
+	<div id='container'></div>
+	<script>
+		var container, scene, camera, renderer, raycaster, objects = [];
+
+		var controls;
+
+		init();
+		animate();
+
+		function init(){
+
+			//Setup------------------------------------------
+			container = document.getElementById('container');
+
+			scene = new THREE.Scene();
+
+			camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
+			camera.position.z = 5;
+			camera.lookAt(scene.position);
+
+			controls = new THREE.OrbitControls( camera );
+
+			renderer = new THREE.WebGLRenderer( { alpha: true} );
+			renderer.setSize( window.innerWidth, window.innerHeight);
+
+			raycaster = new THREE.Raycaster();
+			//Create and Add Objects To the Scene HERE-------------------
+
+			var geometry = new THREE.TorusGeometry( 1, 0.5, 16, 50 );
+			var material = new THREE.MeshNormalMaterial();
+			var torus = new THREE.Mesh( geometry, material );
+			scene.add( torus );
+
+			//Events------------------------------------------
+			controls.addEventListener( 'change', render );
+			window.addEventListener( 'resize', onWindowResize, false );
+
+			//Final touches-----------------------------------
+			container.appendChild( renderer.domElement );
+			document.body.appendChild( container );
+		}
+
+		function animate(){
+			requestAnimationFrame( animate );
+			controls.update();
+			render();
+		}
+		function render(){
+
+			//Render Scene---------------------------------------
+        	renderer.clear();
+			renderer.render( scene , camera );
+		}
+
+		function onWindowResize() {
+
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			
+			renderer.setSize( window.innerWidth, window.innerHeight );
+
+		}
+	</script>
+</body>
+</html>

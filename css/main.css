@@ -1,0 +1,250 @@
+body {
+	margin: 0px;
+	overflow: hidden;
+	font-size: 20px;
+	font-family: "Arial";
+	color: white;
+}
+
+#signInBG {
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/background.png");
+	background-repeat: no-repeat;
+}
+
+#signInPanel {
+	left: calc((100% - 300px)/2);
+	top: calc((100% - 400px)/2);;
+	width: 300px;
+	height: 400px;
+}
+
+#usernamePanel {
+	display: none;
+	left: calc((100% - 300px)/2);
+	top: calc((100% - 200px)/2);;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+}
+
+#lobbyPanel {
+	display: none;
+	left: calc((100% - 800px)/2);
+	top: calc((100% - 650px)/2);;
+	width: 800px;
+	height: 650px;
+}
+
+#usernameTitle {
+	color: white;
+	text-align: left;
+}
+
+#heroImage {
+	width: 250px;
+	height: 125px;
+	background-color: white;
+}
+
+#headContent {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#headContent .headDiv {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#readyPromptText {
+	color: white;
+}
+
+#readyPromptBtn {
+	text-align: center;
+	background-color: #e2040b;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#readyPromptBtn:hover {
+	background-color: #ff1919;
+	cursor: pointer;
+}
+
+#usernameInput {
+	font-size: 20px;
+	margin-top: 40px;
+	padding: 5px;
+	outline: none;
+	border-style: none;
+	border-radius: 5px;
+}
+
+.guiPanel {
+	position: absolute;
+	background-color: #333333;
+	border-radius: 10px;
+	box-shadow:
+	0px 1px 5px #000000,
+	0px -1px 5px #000000;
+}
+
+#nextBtn {
+	position: absolute;
+	color: white;
+	bottom: 10px;
+	right: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #329932;
+}
+
+#nextBtn:hover {
+	cursor: pointer;
+	background-color: #4ca64c;
+}
+
+#signInDiv {
+	margin-top: 100px;
+	text-align: center;
+}
+
+#googleBtn {
+	background-color: #e2040b;
+}
+
+#googleBtn:hover {
+	background-color: #ff1919; 
+}
+
+#facebookBtn {
+	background-color: #3B5998;
+}
+
+#facebookBtn:hover {
+	background-color: #4549cc;
+}
+
+#twitterBtn {
+	background-color: #00ced1;
+}
+
+#twitterBtn:hover {
+	background-color: skyblue;
+}
+
+.signInBtn {
+	display: inline-block;
+	text-align: center;
+	color: white;
+	padding: 10px;
+	margin-bottom: 20px;
+	background-color: lightblue;
+	border-radius: 5px;
+}
+
+.signInBtn:hover {
+	cursor: pointer;
+}
+
+.errorMsg {
+	display: none;
+	color: red;
+}
+
+/* Lobby Area */
+
+#yourTeamDiv {
+	width: 100%;
+	margin-top: 20px;
+}
+
+#oppTeamDiv {
+	margin-top: 30px;
+}
+
+#yourTeamLabel {
+	margin-bottom: 10px;
+	padding-left: 20px;
+}
+
+#yourTeamContent {
+	text-align: center;
+}
+
+#yourTeamContent .teamContent {
+	display: inline-block;
+}
+
+#oppTeamContent {
+	text-align: center;
+}
+
+#oppTeamContent .teamContent {
+	display: inline-block;
+}
+
+#oppTeamLabel {
+	margin-bottom: 10px;
+	padding-left: 20px;
+}
+
+.teamContent {
+	text-align: center;
+	margin-right: 20px;
+}
+
+.teamIcon {
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: white;
+}
+
+.teamName {
+	text-align: center;
+	width: 100px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.someBtn {
+	width: 60px;
+	background-color: grey;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.someBtn:hover {
+	cursor: pointer;
+	background-color: darkgrey;
+}
+
+#heroSelectPrompt {
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+#heroSelectPrompt .heroSelectDiv {
+	vertical-align: top;
+	display: inline-block;
+}
+
+#heroStats {
+	background-color: #444444;
+	border-radius: 5px;
+}
+
+.heroStat div {
+	display: inline-block;
+}
+
+#heroFrame {
+	width: 100%;
+	height: 100%;
+}

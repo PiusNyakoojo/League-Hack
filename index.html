@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="shortcut icon" href='images/icon.png'>
+	<script src='js/lib/three.js'></script>
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+</head>
+<body>
+	<div id='signInBG'>
+		<div id='signInPanel' class='guiPanel'>
+			<div id='signInDiv'>
+				<div id='googleBtn' class='signInBtn' onclick='authWith("google")'>Sign in with Google</div>
+				<div id='facebookBtn' class='signInBtn' onclick='authWith("facebook")'>Sign in with Facebook</div>
+				<div id='twitterBtn' class='signInBtn' onclick='authWith("twitter")'>Sign in with Twitter</div>
+			</div>
+		</div>
+
+		<div id='usernamePanel' class='guiPanel'>
+			<div>
+				<input id='usernameInput' type='text' placeholder='Username'>
+			</div>
+			<div id='charError' class='errorMsg'>*No special characters.</div>
+			<div id='takenError' class='errorMsg'>*Username is taken.</div>
+			<div id='nextBtn' onclick='checkUsername()'>Next</div>
+		</div>
+
+		<div id='lobbyPanel' class='guiPanel'>
+			<div id='headContent'>
+				<div id='playerContent' class='headDiv'>
+					<div id='usernameTitle'></div>
+					<div id='heroImage'>
+						<iframe id='heroFrame' frameBorder="0" src='heroes/sphere.html'></iframe>
+					</div>
+					<div id='heroSelectPrompt'>
+						<div id='previousHeroBtn' class='someBtn heroSelectDiv' onclick='previousHero()'>Previous</div>
+						<div id='heroStats' class='heroSelectDiv'>
+							<div class='heroStat'>
+								<div id='heroHealthLabel'>Health:</div>
+								<div id='heroHealth'>10</div>
+							</div>
+							<div class='heroStat'>
+								<div id='heroStregthLabel'>Strength:</div>
+								<div id='heroStrength'>10</div>
+							</div>
+							<div class='heroStat'>
+								<div id='heroSpeedLabel'>Speed:</div>
+								<div id='heroSpeed'>10</div>
+							</div>
+						</div>
+						<div id='nextHeroBtn' class='someBtn heroSelectDiv' onclick='nextHero()'>Next</div>
+					</div>
+				</div>
+				<div id='readyPrompt' class='headDiv'>
+					<div id='readyPromptText'>Are you ready?</div>
+					<div id='readyPromptBtn' onclick='toggleReady()'>Ready</div>
+				</div>
+			</div>
+			<div id='yourTeamDiv'>
+				<div id='yourTeamLabel'>Your Team:</div>
+				<div id='yourTeamContent'></div>
+			</div>
+			<div id='oppTeamDiv'>
+				<div id='oppTeamLabel'>Opponent Team:</div>
+				<div id='oppTeamContent'></div>
+			</div>
+		</div>
+	</div>
+
+	<div id='container'></div>
+
+	<script src='js/lib/PlayerControls.js'></script>
+	<script src='js/guicontrols.js'></script>
+	<script src='js/auth.js'></script>
+	<script src='js/gameplay.js'></script>
+	<script src='js/misc.js'></script>
+	<script src='js/main.js'></script>
+</body>
+</html>
