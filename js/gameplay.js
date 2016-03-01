@@ -55,7 +55,7 @@ function endGame() {
 	showElement( "lobbyPanel" );
 	showElement( "signInBG" );
 
-	firebase.child("Lobby").child( lobbyValue ).update( { "inSession": false } );
+	firebase.child("Lobby").child( lobbyValue ).remove();
 }
 
 function updatePlayer( snapshot ) {

@@ -157,22 +157,22 @@ function joinLobby() {
 			var i = 0;
 
 			for ( var key in snapshot.val() ) {
-
-				if ( Object.keys( snapshot.val()[key].teamA ).length < playersPerTeam ) {
-
-					initLobby( key, "teamA" );
-
-					return;
-				} else if ( snapshot.val()[key].teamB ) {
-					if ( Object.keys( snapshot.val()[key].teamB ).length < playersPerTeam ) {
-						initLobby( key, "teamB" );
-						return;
-					}
-				} else {
-					initLobby( key, "teamB" );
-					return;
-				}
 				
+        if ( !snapshot.val()[key].inSession ) {
+           if ( Object.keys( snapshot.val()[key].teamA ).length < playersPerTeam ) {
+
+              initLobby( key, "teamA" );
+              return;
+             
+            } else if ( snapshot.val()[key].teamB ) {
+              if ( Object.keys( snapshot.val()[key].teamB ).length < playersPerTeam ) {
+                
+                initLobby( key, "teamB" );
+                return;
+                
+              }
+            } 
+        }
 
 				i++;
 			}
